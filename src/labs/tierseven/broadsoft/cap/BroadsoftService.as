@@ -29,7 +29,6 @@ package labs.tierseven.broadsoft.cap
 	import labs.tierseven.broadsoft.cap.http.XMLResponse;
 	
 	import mx.utils.Base64Encoder;
-	import mx.utils.ObjectUtil;
 	
 	/**
 	 * This class is designed to connect to and parse data from the broadsoft
@@ -736,8 +735,8 @@ package labs.tierseven.broadsoft.cap
 			}
 			else
 			{
-				var ev:CallError = new CallError(CallError.REGISTRATION_FAILED);
-				dispatchEvent(ev);
+				var loginFailedEvent:BroadsoftServiceEvent = new BroadsoftServiceEvent(BroadsoftServiceEvent.LOGIN_FAILED);
+				dispatchEvent(loginFailedEvent);
 			}
 		}
 		
